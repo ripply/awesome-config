@@ -1,16 +1,16 @@
-run_once("nm-applet",nil,1)
+run_once("nm-applet")
 -- -x fixes it working with QT applications such as skype
-run_once("ibus-daemon","-d -x",1)
-run_once("gnome-power-manager", nil, 1)
-run_once("xfce4-power-manager","--no-daemon",1)
-run_once("volti",nil,1)
-run_once("jupiter",nil,1)
-run_once("gnome-settings-daemon",nil,1)
+run_once("ibus-daemon","-d -x")
+run_once("gnome-power-manager")
+run_once("xfce4-power-manager","--no-daemon")
+run_once("volti")
+run_once("jupiter")
+run_once("gnome-settings-daemon")
 
-run_once(browser,nil,1)
-run_once("anki",nil,1)
-run_once(im,nil,1)
-run_once("rescuetime",nil,1)
+run_once(browser)
+run_once("anki")
+run_once(im)
+run_once("rescuetime")
 -- fixes java gui issue by giving the window manager a name
 --- otherwise it has no name and java does not draw correctly
 -- http://awesome.naquadah.org/wiki/Problems_with_Java

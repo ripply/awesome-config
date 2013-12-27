@@ -57,12 +57,13 @@ else
 end
 
 
-if command_exists("gnome-www-browser") then
-  browser = "gnome-www-browser"
-elseif command_exists("chrome") then
+
+if command_exists("chrome") then
   browser = "chrome"
 elseif command_exists("chromium-browser") then
   browser = "chromium-browser"
+elseif command_exists("gnome-www-browser") then
+  browser = "gnome-www-browser"
 else
   browser = os.getenv("BROWSER")
   if browser == nil then
@@ -76,6 +77,10 @@ elseif command_exists("audacious") then
   music = "audacious"
 else
   music = ""
+end
+
+if command_exists("skype") then
+  im = "skype"
 end
 
 -- }}}
@@ -93,6 +98,8 @@ if editor == nil then
      editor = "vim"
    end
 end
+
+require_safe("personal")
 
 editor_cmd = editor
 
