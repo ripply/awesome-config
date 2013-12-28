@@ -11,6 +11,13 @@ run_once(browser)
 run_once("anki")
 run_once(im)
 run_once("rescuetime")
+
+-- redshift changed their gtk gui commandline name
+if command_exists("redshift-gtk") then -- newer version
+   run_once("redshift-gtk")
+elseif command_exists("gtk-redshift") then -- older version
+   run_once("gtk-redshift")
+end
 -- fixes java gui issue by giving the window manager a name
 --- otherwise it has no name and java does not draw correctly
 -- http://awesome.naquadah.org/wiki/Problems_with_Java
