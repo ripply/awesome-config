@@ -47,10 +47,12 @@ home = os.getenv("HOME")
 
 if command_exists("xfdesktop") and command_exists("pcmanfm") then
   desktop_shell = "xfdesktop"
+  desktop_shell_args = ""
   filemanager = "pcmanfm"
 elseif command_exists("nautilus") then
-  desktop_shell = "nautilus -n"
-  filemanager = "nautilus"
+  desktop_shell = "nautilus"
+  desktop_shell_args = "-n"
+  filemanager = desktop_shell
 else
   filemanager = os.getenv("FILEMANAGER")
   desktop_shell = ""
@@ -198,18 +200,21 @@ mysystray = widget({ type = "systray" })
          status = string.match(status, "%[(o[^%]]*)%]")
  
          local color = "#FF0000"
-         if string.find(status, "on", 1, true) then
-              color = "#00FF00"
-         end
-         status = ""
-         for i = 1, math.floor(volume / 10) do
+         if status ~= nil then
+           if string.find(status, "on", 1, true) then
+             color = "#00FF00"
+           end
+
+           status = ""
+           for i = 1, math.floor(volume / 10) do
              status = status .. "|"
-         end
-         for i = math.floor(volume / 10) + 1, 10 do
+           end
+           for i = math.floor(volume / 10) + 1, 10 do
              status = status .. "-"
+           end
+           status = "-[" ..status .. "]+"
+           widget.text = "<span color=\"" .. color .. "\">" .. status .. "</span>|"
          end
-         status = "-[" ..status .. "]+"
-         widget.text = "<span color=\"" .. color .. "\">" .. status .. "</span>|"
      elseif mode == "up" then
          os.execute("amixer -q -c " .. cardid .. " sset " .. channel .. " 5%+")
          volume("update", widget)

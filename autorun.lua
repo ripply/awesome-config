@@ -7,6 +7,7 @@ run_once("volti")
 run_once("jupiter")
 run_once("gnome-settings-daemon")
 
+run_once(desktop_shell, desktop_shell_args)
 run_once(browser)
 run_once("anki")
 run_once(im)
@@ -14,9 +15,9 @@ run_once("rescuetime")
 
 -- redshift changed their gtk gui commandline name
 if command_exists("redshift-gtk") then -- newer version
-   run_once("redshift-gtk")
+   run_once("redshift-gtk",nil,"redshift")
 elseif command_exists("gtk-redshift") then -- older version
-   run_once("gtk-redshift")
+   run_once("gtk-redshift",nil,"redshift")
 end
 -- fixes java gui issue by giving the window manager a name
 --- otherwise it has no name and java does not draw correctly
