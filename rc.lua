@@ -60,10 +60,10 @@ end
 
 
 
-if command_exists("chrome") then
-  browser = "chrome"
+if command_exists("google-chrome") then
+ browser = "google-chrome"
 elseif command_exists("chromium-browser") then
-  browser = "chromium-browser"
+ browser = "chromium-browser"
 elseif command_exists("gnome-www-browser") then
   browser = "gnome-www-browser"
 else
