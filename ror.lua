@@ -16,11 +16,7 @@ if filemanager == nil then
    filemanager = "nautilus"
 end
 
--- if string.find(filemanager,"pcmanfm") then
---   filemanager_class="Pcmanfm"
--- else
-   filemanager_class = firstToUpper( filemanager )
--- end
+filemanager_class = firstToUpper( filemanager )
 
 if browser == nil then
    if command_exists( "gnome-www-browser" ) then
@@ -30,11 +26,7 @@ if browser == nil then
    end
 end
 
-if string.find(browser,"gnome-www-browser") or string.find(browser,"chrome") then
-   browser_class = "Gnome-www-browser"
-else
-   browser_class = firstToUpper( browser )
-end
+browser_class = firstToUpper( browser )
 
 if editor == nil then
    editor = "emacsclient -a emacs -n -c"
@@ -50,21 +42,13 @@ if im == nil then
    im = "skype"
 end
 
-if string.find(im, "skype") then
-   im_class = "Skype"
-else
-   im_class = firstToUpper( browser )
-end
+im_class = firstToUpper( im )
 
 if terminal == nil then
    terminal = "xterm"
 end
 
-if string.find(terminal,"xterm") then
-   terminal_class = "XTerm"
-else
-   terminal_class = firstToUpper( terminal )
-end
+terminal_class = firstToUpper( terminal )
 
 music_class = firstToUpper( music )
 
