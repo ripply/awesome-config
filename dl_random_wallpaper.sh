@@ -10,7 +10,6 @@
     RANDOM_FILENAME=`tr -dc A-Za-z0-9_ < /dev/urandom | head -c8`
     wget -U "Mozilla/5.0" -O - http://interfacelift.com/wallpaper_beta/downloads/random/hdtv/ | grep download.png | sed 's/^\s*<a href="\([^"]\+\)"><[^>]\+download.*$/http:\/\/www.interfacelift.com\1/' | head -n 1 | wget -U "Mozilla/5.0" -i - -O wallpaper.jpg.tmp
     mv wallpaper.jpg.tmp $RANDOM_FILENAME.jpg
-    #touch wallpaper.jpg
 #feh
     #feh --bg-scale ${PWD}/wallpaper.jpg
 #Gnome2
