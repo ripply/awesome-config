@@ -423,7 +423,7 @@ clientkeys = awful.util.table.join(
             end
         end),
 
-    awful.key({ modkey, "Control" }, "w", function () awful.util.spawn("/home/decoface/Pictures/dl_random_wallpaper.sh", false) end),
+    awful.key({ modkey, "Control" }, "w", function () awful.util.spawn(awful.util.getdir("config") .. "/dl_random_wallpaper.sh", false) end),
 
 
     -- volumn keys
