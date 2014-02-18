@@ -7,7 +7,12 @@
         DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
         cd "$DIR"
     fi
-    RANDOM_FILENAME=`tr -dc A-Za-z0-9_ < /dev/urandom | head -c8`
+    while true; do
+        RANDOM_FILENAME=`tr -dc A-Za-z0-9_ < /dev/urandom | head -c8`
+        if [ ! -e "$RANDOM_FILENAME" ]; then
+            break;
+        fi
+    done
     wget -U "Mozilla/5.0" -O - http://interfacelift.com/wallpaper_beta/downloads/random/hdtv/ | grep download.png | sed 's/^\s*<a href="\([^"]\+\)"><[^>]\+download.*$/http:\/\/www.interfacelift.com\1/' | head -n 1 | wget -U "Mozilla/5.0" -i - -O wallpaper.jpg.tmp
     mv wallpaper.jpg.tmp $RANDOM_FILENAME.jpg
 #feh
