@@ -44,6 +44,20 @@ elif isrunning rhythmbox; then
     else
         echo 'rhythmbox: unknown command ' "$COMMAND"
     fi
+elif isrunning nightingale; then
+    # Supposedly works with command line addon
+    # http://wiki.getnightingale.com/doku.php?id=add-on:commandline
+    if [ "$COMMAND" == 'play' ]; then
+        nightingale -play
+    elif [ "$COMMAND" == 'prev' ]; then
+        nightingale -previous
+    elif [ "$COMMAND" == 'next' ]; then
+        nightingale -next
+    elif [ "$COMMAND" == 'stop' ]; then
+        nightingale -stop
+    else
+        echo 'nightingale: unknown command ' "$COMMAND"
+    fi
 else
     if [ -z "$2" ]; then
         #audacious -p
