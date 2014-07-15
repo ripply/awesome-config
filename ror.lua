@@ -68,6 +68,6 @@ table5={
    -- ["b"]={"xterm -name rtorrentTerm -e rtorrent","rtorrentTerm","instance"}, 
    -- ["z"]={"xterm -name mocpTerm -e mocp","mocpTerm", "instance"} 
    ["s"]={im, im_class},
-   ["d"]={terminal, terminal_class},
+   -- ["d"]={terminal, terminal_class},
    ["c"]={"virtualbox", "VirtualBox"}
 }

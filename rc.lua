@@ -7,6 +7,7 @@ require("beautiful")
 -- Notification library
 require("naughty")
 require("helpers") -- From https://github.com/tony/awesome-config
+require("rodentbane")
 
 -- Load Debian menu entries
 require("debian.menu")
@@ -446,6 +447,8 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, }, "F1", function () awful.util.spawn_with_shell("~/.config/awesome/musicplayback.sh prev", false) end),
     awful.key({ modkey, }, "F3", function () awful.util.spawn_with_shell("~/.config/awesome/musicplayback.sh play", false) end),
     awful.key({ modkey, }, "F4", function () awful.util.spawn_with_shell("~/.config/awesome/musicplayback.sh next", false) end),
+
+    awful.key({ modkey, }, "d",  function () rodentbane.start() end),
 
     -- Toggle titlebar visibility
     awful.key({ modkey, "Shift" }, "t", function (c)
