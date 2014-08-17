@@ -565,6 +565,8 @@ awful.rules.rules = {
     { rule = { class = "Pidgin" },
       properties = { tag = tags[1][6] } },
     { rule = { class = "Eclipse" },
+     properties = { tag = tags[screen.count()][4] } },
+    { rule = { class = "Eclipse", name = "" },
       properties = { tag = tags[mouse.screen][4] } },
     { rule = { class = "Transmission" },
       properties = { tag = tags[screen.count()][7] } },
