@@ -13,7 +13,7 @@
             break;
         fi
     done
-    wget -U "Mozilla/5.0" -O - http://interfacelift.com/wallpaper_beta/downloads/random/hdtv/ | grep download.png | sed 's/^\s*<a href="\([^"]\+\)"><[^>]\+download.*$/http:\/\/www.interfacelift.com\1/' | head -n 1 | wget -U "Mozilla/5.0" -i - -O wallpaper.jpg.tmp
+    wget -U "Mozilla/5.0" -O - http://interfacelift.com/wallpaper/downloads/random/hdtv/4k_uhdtv/ | grep download.png | sed 's/^\s*<a href="\([^"]\+\)"><[^>]\+download.*$/http:\/\/www.interfacelift.com\1/' | head -n 1 | wget -U "Mozilla/5.0" -i - -O wallpaper.jpg.tmp
     mv wallpaper.jpg.tmp $RANDOM_FILENAME.jpg
 #feh
     #feh --bg-scale ${PWD}/wallpaper.jpg
