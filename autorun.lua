@@ -12,6 +12,9 @@ run_once(browser)
 run_once("anki")
 run_once(im)
 run_once("rescuetime")
+run_once("feh --bg-scale /home/decoface/Pictures/wallpaper.jpg")
+
+run_once("conky")
 
 -- redshift changed their gtk gui commandline name
 if command_exists("redshift-gtk") then -- newer version
