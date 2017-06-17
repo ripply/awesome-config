@@ -279,7 +279,9 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    awful.key({ modkey }, "Tab",     function () awful.screen.focus_relative(1) end)
 )
 
 clientkeys = awful.util.table.join(
@@ -540,3 +542,10 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+awful.util.spawn_with_shell("feh --bg-scale /home/ripply/Pictures/wallpaper.jpg")
+awful.util.spawn_with_shell("gnome-session")
+awful.util.spawn_with_shell("unity-settings-daemon")
+awful.util.spawn_with_shell("nm-applet")
+awful.util.spawn_with_shell("nautilus --no-desktop")
+-- awful.util.spawn_with_shell("/usr/bin/redshift-gtk -l 42:-89")

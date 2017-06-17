@@ -6,13 +6,15 @@ run_once("xfce4-power-manager","--no-daemon")
 run_once("volti")
 run_once("jupiter")
 run_once("gnome-settings-daemon")
+run_once("unity-settings-daemon")
+run_once("nautilus", "--no-desktop")
 
 run_once(desktop_shell, desktop_shell_args)
 run_once(browser)
 run_once("anki")
 run_once(im)
 run_once("rescuetime")
-run_once("feh --bg-scale /home/decoface/Pictures/wallpaper.jpg")
+run_once("feh --bg-scale /home/ripply/Pictures/wallpaper.jpg")
 
 run_once("conky")
 
