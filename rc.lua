@@ -281,7 +281,8 @@ globalkeys = awful.util.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
 
-    awful.key({ modkey }, "Tab",     function () awful.screen.focus_relative(1) end)
+    awful.key({ modkey          }, "Tab",     function () awful.screen.focus_relative(1) end),
+    awful.key({ modkey, "Shift" }, "Tab",     function () awful.screen.focus_relative(-1) end)
 )
 
 clientkeys = awful.util.table.join(
