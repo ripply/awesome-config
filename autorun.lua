@@ -1,4 +1,4 @@
-run_once("nm-applet")
+run("dbus-launch nm-applet")
 -- -x fixes it working with QT applications such as skype
 run_once("ibus-daemon","-d -x")
 run_once("gnome-power-manager")
@@ -7,7 +7,7 @@ run_once("volti")
 run_once("jupiter")
 run_once("gnome-settings-daemon")
 run_once("unity-settings-daemon")
-run_once("nautilus", "--no-desktop")
+-- run_once("nautilus", "--no-desktop")
 
 run_once(desktop_shell, desktop_shell_args)
 run_once(browser)
