@@ -281,8 +281,8 @@ globalkeys = awful.util.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
 
-    awful.key({ modkey          }, "Tab",     function () awful.screen.focus_relative(1) end),
-    awful.key({ modkey, "Shift" }, "Tab",     function () awful.screen.focus_relative(-1) end)
+    awful.key({ modkey          }, "Tab",     function () awful.screen.focus_relative(-1) end),
+    awful.key({ modkey, "Shift" }, "Tab",     function () awful.screen.focus_relative(1) end)
 )
 
 clientkeys = awful.util.table.join(
@@ -544,7 +544,7 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.util.spawn_with_shell("feh --bg-scale /home/ripply/Pictures/wallpaper.jpg")
+awful.util.spawn_with_shell("feh --bg-scale /home/deco/Pictures/wallpaper.jpg")
 awful.util.spawn_with_shell("gnome-session")
 awful.util.spawn_with_shell("unity-settings-daemon")
 awful.util.spawn_with_shell("pkill nm-applet")
