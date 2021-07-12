@@ -190,10 +190,10 @@ awful.screen.connect_for_each_screen(function(s)
         awful.layout.layouts[2],
         awful.layout.layouts[2],
         awful.layout.layouts[2],
-        awful.layout.layouts[6],
+        awful.layout.layouts[2],
         awful.layout.layouts[9],
-        awful.layout.layouts[3],
-        awful.layout.layouts[3],
+        awful.layout.layouts[2],
+        awful.layout.layouts[2],
         awful.layout.layouts[2]
     }}
     for s = 1, screen.count() do
